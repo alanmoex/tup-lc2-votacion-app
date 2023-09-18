@@ -16,24 +16,18 @@
 <body>
     <header>
         <!--Barra de logo portal-->
-        <div class="container-fluid bg-celeste">
-            <div class="header-page">
-                <a href="index.html">
-                    <img src="img/Logo_DINE_negativo.png" alt="logo" class="logo">
-                </a>
-                 
-            </div>
+        <div class="container-fluid header-page">
+            <a href="index.html">
+                <img src="img/Logo_DINE_negativo.png" alt="logo" class="logo">
+            </a>
         </div>
 
         <!--Barra de menú principal-->
-        <div class="container-fluid bg-black">
-            <div class="menu">
-                <ul>
-                    <li><a class="active" href="#informes">Informes</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </div>
-            
+        <div class="container-fluid menu">
+            <ul>
+                <li><a class="active" href="informes.html">Informes</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
         </div>
 
     </header>
@@ -56,9 +50,9 @@
                             realizados bajo la adhesión a ley de simultaneidad.
                         </p>
                     </div>
-                    
+
                     <div class="col-lg-6">
-                        <img class="datos" src="img/images.png" alt="datos">
+                        <img id="imagen-principal" src="img/base-de-datos-de-candidatos.webp" alt="datos">
                     </div>
                 </div>
             </div>
@@ -68,10 +62,11 @@
         <section id="sec-contenido">
             <!--Seccion para contenido de la página-->
             <div style="background-color: blue;">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px" y="0px" width="841.889px" height="595.281px" viewBox="0 0 841.889 595.281"
-                    enable-background="new 0 0 841.889 595.281" xml:space="preserve" class="v-icon__component theme--light"
-                    style="font-size: 50px; height: 50px; width: 50px;">
+                
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.889px" height="595.281px"
+                    viewBox="0 0 841.889 595.281" enable-background="new 0 0 841.889 595.281" xml:space="preserve"
+                    class="v-icon__component theme--light" style="font-size: 50px; height: 50px; width: 50px;">
                     <g>
                         <path fill="#FFFFFF"
                             d="M671.434,227.503l-43.614-14.145c-2.358-1.179-4.716-1.179-8.252,1.179
@@ -94,7 +89,8 @@
                                                                 c-1.179,0-2.357,0-2.357,0c-1.179,0-2.357,0-3.536,0l0,0l-4.716-36.542l-1.179-8.251c0,0,0,0,1.179,0
                                                                 c0,0,56.581-8.252,76.621,24.754c15.323,25.933,38.899,50.688,56.58,62.475L585.383,319.448z">
                         </path>
-                        <path fill="#FFFFFF" d="M368.49,179.174c2.357,1.179,3.536,2.357,5.894,2.357l0,0l0,0c3.536,0,5.895-1.179,8.252-3.536
+                        <path fill="#FFFFFF"
+                            d="M368.49,179.174c2.357,1.179,3.536,2.357,5.894,2.357l0,0l0,0c3.536,0,5.895-1.179,8.252-3.536
                                                                 l29.469-35.363c3.536-4.715,2.357-10.609-1.179-14.146c-2.357-1.179-4.715-2.357-7.072-2.357c-2.358,0-4.716,1.179-7.073,3.536
                                                                 l-12.966,15.324l-9.431,11.788l-5.894-4.716l-4.715-3.536c-4.716-3.536-10.609-2.357-14.146,2.357
                                                                 c-3.536,4.716-2.357,10.609,2.357,14.146L368.49,179.174z">
@@ -108,14 +104,37 @@
                                                                 c-8.252,0-16.503,2.357-23.576,5.894c3.537-12.967,12.967-21.218,23.576-21.218C394.422,321.805,403.853,331.235,406.21,344.202z
                                                                 M382.635,358.347c23.575,0,43.614,24.754,47.15,57.76h-94.302C339.02,383.101,359.059,358.347,382.635,358.347z">
                         </path>
+                        
                     </g>
-                </svg>
+                </svg><h2>hola</h2>
             </div>
         </section>
     </main>
     <!--Pie de página-->
     <footer>
-        <p>Desarrollado con ♥ - LC2</p>
+        <div class="container-fluid footer-page">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="img/icons/Ministerio-del-Interior_pluma.1ab9a7a7.png" alt="Ministerio del interior">
+                    <img src="img/icons/Logo_DINE_negativo.a88f983e.png" alt="Dirección Nacional Electoral">
+                    <img src="img/icons/logos_001-10.4430c8d5.png" alt="Observatorio Electoral">
+                </div>
+
+                <div class="col-lg-8">
+                    <p>Resultados Provisorios en base a telegramas recibidos (Art. 43 Ley 26571 y Art. 105 Ley 19945).
+                        Los
+                        porcentajes de las agrupaciones políticas son calculados sobre los votos válidos (PASO) conforme
+                        al art. 45
+                        Ley 26.571 y afirmativos (Generales). No se incluyen los votos correspondientes a los electores
+                        residentes
+                        en el exterior ni privados de la libertad. Al usar este sitio usted acepta los <a href=""
+                            target="_blank">Términos y
+                            Condiciones</a></p>
+                </div>
+
+
+            </div>
+        </div>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

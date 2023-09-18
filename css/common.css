@@ -4,60 +4,89 @@
   font-family: 'Roboto', sans-serif;
 }
 
+
 :root {
   --magenta: #ee3d8f;
---celeste: #37bbed;
---morado: #9283be;
---gris-claro: #9e9e9e;
---titulos: #333;
---textos: #333;
---fondo-pantalla: rgb(235, 245, 251);
---fondo-Cabecera: #18a0fb;
---fondo-Footer: #333;
---fondo-Menu: #333;
---texto-footer: #9e9e9e;
---titulo-Grilla: #727272;
---borde-inferior-Grilla: #727272;
---borde-Grilla: #c5c5c5;
---grafica-amarillo: rgb(252, 210, 0);
---grafica-amarillo-claro: rgba(252, 210, 0, 0.3);
---grafica-celeste: rgb(0, 169, 232);
---grafica-celeste-claro: rgba(0, 169, 232, 0.3);
---grafica-bordo: rgb(171, 40, 40);
---grafica-bordo-claro: rgba(171, 40, 40, 0.3);
---grafica-lila: rgb(112, 76, 159);
---grafica-lila-claro: rgba(112, 76, 159, 0.5);
---grafica-lila2: rgb(77, 46, 110);
---grafica-lila2-claro: rgba(77, 46, 110, 0.5);
---grafica-gris: rgb(128, 128, 128);
---grafica-gris-claro: rgb(128, 128, 128, 0.5);
---grafica-verde: rgb(102, 171, 60);
---grafica-verde-claro: rgba(102, 171, 60, 0.5);
---mensaje-usuario-amarillo: #ffc107;
---mensaje-usuario-verde: #28a745;
---mensaje-usuario-rojo: #dc3545;
+  --celeste: #37bbed;
+  --morado: #9283be;
+  --gris-claro: #9e9e9e;
+  --titulos: #333;
+  --textos: #333;
+  --fondo-pantalla: rgb(235, 245, 251);
+  --fondo-Cabecera: #18a0fb;
+  --fondo-Footer: #333;
+  --fondo-Menu: #333;
+  --texto-footer: #9e9e9e;
+  --titulo-Grilla: #727272;
+  --borde-inferior-Grilla: #727272;
+  --borde-Grilla: #c5c5c5;
+  --grafica-amarillo: rgb(252, 210, 0);
+  --grafica-amarillo-claro: rgba(252, 210, 0, 0.3);
+  --grafica-celeste: rgb(0, 169, 232);
+  --grafica-celeste-claro: rgba(0, 169, 232, 0.3);
+  --grafica-bordo: rgb(171, 40, 40);
+  --grafica-bordo-claro: rgba(171, 40, 40, 0.3);
+  --grafica-lila: rgb(112, 76, 159);
+  --grafica-lila-claro: rgba(112, 76, 159, 0.5);
+  --grafica-lila2: rgb(77, 46, 110);
+  --grafica-lila2-claro: rgba(77, 46, 110, 0.5);
+  --grafica-gris: rgb(128, 128, 128);
+  --grafica-gris-claro: rgb(128, 128, 128, 0.5);
+  --grafica-verde: rgb(102, 171, 60);
+  --grafica-verde-claro: rgba(102, 171, 60, 0.5);
+  --mensaje-usuario-amarillo: #ffc107;
+  --mensaje-usuario-verde: #28a745;
+  --mensaje-usuario-rojo: #dc3545;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--fondo-pantalla);
 }
 
-.bg-celeste {
-  background-color: #3498db;
+main {
+  margin-left: 5%;
 }
 
 .header-page {
   padding: 0.5em;
   background-color: var(--fondo-Cabecera);
   color: white;
-  width: 98%;
+  width: 100%;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: auto;
   margin-left: auto;
+}
+
+#imagen-principal {
+  max-width: 100%;
+  /* La imagen no será más ancha que su contenedor */
+  height: auto;
+  /* Mantiene la relación de aspecto original de la imagen */
+  display: block;
+  /* Elimina cualquier espacio adicional debajo de la imagen */
+  margin: 0 auto;
+  /* Centra la imagen horizontalmente si es necesario */
+}
+
+/* Estilo para el pie de página */
+footer {
+  background-color: var(--fondo-Footer);
+}
+
+/* Estilo para los parrafos en el pie de página */
+footer p {
+  color: var(--texto-footer);
+  margin-right: 5%;
+}
+
+/* Estilo para las imágenes en el pie de página */
+footer img {
+  margin-left: 5%;
+  width: 120px;
 }
 
 .logo {
@@ -66,17 +95,31 @@ body {
 
 .menu {
   /* Margen izquierdo y derecho: 13px */
-margin-left: 13px;
-margin-right: 13px;
+  margin-left: 0px;
+  margin-right: 13px;
 
-/* Padding superior: 20px */
-padding-top: 20px;
+  /* Padding superior: 20px */
+  padding-top: 20px;
 
-/* Color de fondo: var(--fondo-Menu) */
-background-color: black;
+  /* Color de fondo: var(--fondo-Menu) */
+  background-color: var(--fondo-Menu);
 
-/* Ancho del contenido: 100% */
-width: 100%;
+  /* Ancho del contenido: 100% */
+  width: 100%;
+  list-style: none;
+}
+
+
+.menu li {
+  display: inline;
+  /* Hace que los elementos de menú se muestren en línea */
+  margin-right: 10px;
+  /* Agrega margen derecho para separar los elementos */
+}
+
+.menu li a {
+  text-decoration: none;
+  /* Elimina la subrayado de los enlaces */
 }
 
 .active {
@@ -96,4 +139,32 @@ width: 100%;
   /* Tamaño de fuente del texto */
   transition: background-color 0.3s, color 0.3s;
   /* Transición de color suave */
+}
+
+p {
+  font-size: 18px;
+  color: var(--textos);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para encabezado 1 (H1) */
+h1 {
+  font-size: 32px;
+  color: var(--titulos);
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 20px;
+}
+
+/* Estilo para encabezado 2 (H2) */
+h2 {
+  font-size: 28px;
+  color: var(--titulos);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para encabezado 3 (H3) */
+h3 {
+  font-size: 24px;
+  color: var(--titulos);
+  font-family: 'Roboto', sans-serif;
 }
