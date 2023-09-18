@@ -11,3 +11,55 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
+.bg-celeste {
+  background-color: #3498db;
+}
+
+.header-page {
+  padding: 0.5em;
+  background-color: var(--fondo-Cabecera);
+  color: white;
+  width: 98%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+.logo {
+  width: 150px;
+}
+
+.menu {
+  /* Margen izquierdo y derecho: 13px */
+margin-left: 13px;
+margin-right: 13px;
+
+/* Padding superior: 20px */
+padding-top: 20px;
+
+/* Color de fondo: var(--fondo-Menu) */
+background-color: black;
+
+/* Ancho del contenido: 100% */
+width: 100%;
+}
+
+.active {
+  display: inline-block;
+  /* Hacer que el enlace sea un bloque en línea */
+  text-decoration: none;
+  /* Eliminar la subrayado del enlace */
+  padding: 10px 20px;
+  /* Espaciado interno del botón (arriba/abajo y derecha/izquierda) */
+  border-radius: 50px;
+  /* Radio para hacer el botón redondeado (ajusta según sea necesario) */
+  border: 2px solid #666;
+  /* Borde del botón (puedes personalizar el color) */
+  color: #666;
+  /* Color del texto */
+  font-size: 16px;
+  /* Tamaño de fuente del texto */
+  transition: background-color 0.3s, color 0.3s;
+  /* Transición de color suave */
+}
