@@ -1,0 +1,38 @@
+.recuadros {
+    border-radius: 10px;
+    margin: 15px;
+    height: 70px;
+    width: 184px;
+    padding: 0.5rem 1rem;
+    color: #FFF;
+    font-size: 12px;
+    display: flex; /* Activar el modelo de caja flexible */
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: left;
+    font-weight: bold;
+}
+
+.agregar-informe {
+    background-color: var(--gris-claro);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+    transition: color 0.2s; 
+    color: var(--textos);
+}
+
+#mesas-escrutadas {
+    background-color: var(--celeste);
+}
+
+#electores {
+    background-color: var(--magenta);
+}
+
+#participacion {
+    background-color: var(--morado);
+}
