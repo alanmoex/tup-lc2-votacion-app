@@ -50,8 +50,10 @@ main {
   margin-left: 5%;
 }
 
-.header-page {
+/* Estilos del header */
+.barra-logo {
   padding: 0.5em;
+  padding-left: 5%;
   background-color: var(--fondo-Cabecera);
   color: white;
   width: 100%;
@@ -61,93 +63,54 @@ main {
   margin-left: auto;
 }
 
-#imagen-principal {
-  max-width: 100%;
-  /* La imagen no será más ancha que su contenedor */
-  height: auto;
-  /* Mantiene la relación de aspecto original de la imagen */
-  display: block;
-  /* Elimina cualquier espacio adicional debajo de la imagen */
-  margin: 0 auto;
-  /* Centra la imagen horizontalmente si es necesario */
-}
-
-/* Estilo para el pie de página */
-footer {
-  background-color: var(--fondo-Footer);
-}
-
-/* Estilo para los parrafos en el pie de página */
-footer p {
-  color: var(--texto-footer);
-  margin-right: 5%;
-}
-
-/* Estilo para las imágenes en el pie de página */
-footer img {
-  margin-left: 5%;
-  width: 120px;
-}
-
 .logo {
   width: 150px;
 }
 
-.menu {
-  /* Margen izquierdo y derecho: 13px */
+.menu-principal {
   margin-left: 0px;
   margin-right: 13px;
-
-  /* Padding superior: 20px */
-  padding-top: 20px;
-
-  /* Color de fondo: var(--fondo-Menu) */
   background-color: var(--fondo-Menu);
-
-  /* Ancho del contenido: 100% */
   width: 100%;
   list-style: none;
 }
 
-
-.menu li {
-  display: inline;
-  /* Hace que los elementos de menú se muestren en línea */
+.menu-principal li {
+  display: inline; /* Hace que los elementos de menú se muestren en línea */
   margin-right: 10px;
-  /* Agrega margen derecho para separar los elementos */
 }
 
-.menu li a {
-  text-decoration: none;
-  /* Elimina la subrayado de los enlaces */
+.menu-principal li a {
+  text-decoration: none; /* Elimina la subrayado de los enlaces */
+}
+/*---------------------*/
+
+
+/* Estilos del pie de página */
+footer {
+  background-color: var(--fondo-Footer);
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.active {
-  display: inline-block;
-  /* Hacer que el enlace sea un bloque en línea */
-  text-decoration: none;
-  /* Eliminar la subrayado del enlace */
-  padding: 10px 20px;
-  /* Espaciado interno del botón (arriba/abajo y derecha/izquierda) */
-  border-radius: 50px;
-  /* Radio para hacer el botón redondeado (ajusta según sea necesario) */
-  border: 2px solid #666;
-  /* Borde del botón (puedes personalizar el color) */
-  color: #666;
-  /* Color del texto */
-  font-size: 16px;
-  /* Tamaño de fuente del texto */
-  transition: background-color 0.3s, color 0.3s;
-  /* Transición de color suave */
+footer p {
+  color: var(--texto-footer);
+  
 }
 
+footer img {
+  width: 180px;
+}
+/*----------------------------*/
+
+
+/* Estilos generales para parrafos y titulos */
 p {
   font-size: 18px;
   color: var(--textos);
   font-family: 'Roboto', sans-serif;
 }
 
-/* Estilo para encabezado 1 (H1) */
 h1 {
   font-size: 32px;
   color: var(--titulos);
@@ -155,16 +118,27 @@ h1 {
   padding-bottom: 20px;
 }
 
-/* Estilo para encabezado 2 (H2) */
 h2 {
   font-size: 28px;
   color: var(--titulos);
   font-family: 'Roboto', sans-serif;
 }
 
-/* Estilo para encabezado 3 (H3) */
 h3 {
   font-size: 24px;
   color: var(--titulos);
   font-family: 'Roboto', sans-serif;
+}
+/* ----------------------------- */
+
+.menu-boton {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 30px;
+  border-radius: 30px;
+  border: 2px solid #c9c9c9;
+  color: #c9c9c9;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 5px;
 }
