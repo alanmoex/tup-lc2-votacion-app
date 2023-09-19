@@ -73,15 +73,16 @@ main {
   background-color: var(--fondo-Menu);
   width: 100%;
   list-style: none;
+  color: #ffffff;
 }
 
 .menu-principal li {
-  display: inline; /* Hace que los elementos de menú se muestren en línea */
+  display: inline; 
   margin-right: 10px;
 }
 
 .menu-principal li a {
-  text-decoration: none; /* Elimina la subrayado de los enlaces */
+  text-decoration: none; 
 }
 /*---------------------*/
 
@@ -139,6 +140,5 @@ h3 {
   border: 2px solid #c9c9c9;
   color: #c9c9c9;
   font-size: 16px;
-  transition: background-color 0.3s, color 0.3s;
   margin: 5px;
 }
