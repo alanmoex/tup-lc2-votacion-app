@@ -1,22 +1,12 @@
 img {
   vertical-align: middle;
-  /* Alinear verticalmente la imagen en el medio */
-
 }
-
-
-
-
 
 #imagen-principal {
   max-width: 100%;
-  /* La imagen no será más ancha que su contenedor */
   height: auto;
-  /* Mantiene la relación de aspecto original de la imagen */
   display: block;
-  /* Elimina cualquier espacio adicional debajo de la imagen */
   margin: 0 auto;
-  /* Centra la imagen horizontalmente si es necesario */
 }
 
 .botones-container {
@@ -28,7 +18,7 @@ img {
   border-radius: 10px;
   margin: 5%;
   height: 100px;
-  width: 48%;
+  width: 400px;
   padding: 1rem;
   display: flex; /* Activar el modelo de caja flexible */
   align-items: center; /* Centrar verticalmente el contenido */
@@ -44,11 +34,16 @@ img {
   width: 75px !important;
 }
 
-#boton-paso {
+.boton-paso {
   background-color: var(--magenta);  
 }
 
-#boton-grales {
+.boton-gral {
   background-color: var(--celeste);
 }
 
+.menu-boton-paso-gral {
+  border-radius: 10px;
+  color: #ffffff;
+  border: none;
+}
