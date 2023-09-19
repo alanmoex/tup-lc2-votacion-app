@@ -28,12 +28,6 @@ img {
   text-decoration: none;
 }
 
-.botones-grandes svg {
-  font-size: 75px !important;  
-  height: 75px !important; 
-  width: 75px !important;
-}
-
 .boton-paso {
   background-color: var(--magenta);  
 }
