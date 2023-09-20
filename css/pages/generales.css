@@ -6,9 +6,7 @@
 /* --------------------------- */
 /* Estilos para los botones del menu */
 /* --------------------------- */
-ul, ol {
-    list-style-type: none;
-}
+
 /* Filtrar */
 .filtrar {
     background-color: white;
