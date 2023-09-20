@@ -10,9 +10,6 @@
 /* Filtrar */
 .filtrar {
     background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
     text-transform: uppercase;
     text-align: center;
     vertical-align: middle;
@@ -28,6 +25,8 @@
     text-transform: uppercase;
     text-align: center;
     color: var(--textos);
+    float: right;
+    margin-top: 0.2em;
 }
 
 /* Estilo de desplegables */
@@ -92,6 +91,9 @@
     background-color: var(--morado);
 }
 
+
+
+
 /* --------------------------- */
 /* Estilos para los cuadros de agrupaciones, provincias, resumen */
 /* --------------------------- */
@@ -112,6 +114,9 @@
     text-align: center;
     white-space: nowrap;
 }
+
+
+
 
 /* --------------------------- */
 /* Estilos para el cuadro de Agrupaciones políticas */
