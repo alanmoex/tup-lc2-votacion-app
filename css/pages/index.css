@@ -28,17 +28,5 @@ img {
   text-decoration: none;
 }
 
-.boton-paso {
-  background-color: var(--magenta);  
-}
 
-.boton-gral {
-  background-color: var(--celeste);
-}
-
-.menu-boton-paso-gral {
-  border-radius: 10px;
-  color: #ffffff;
-  border: none;
-}
 

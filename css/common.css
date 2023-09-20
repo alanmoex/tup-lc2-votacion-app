@@ -84,6 +84,35 @@ main {
 .menu-principal li a {
   text-decoration: none; 
 }
+
+.menu-boton {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 25px;
+  border-radius: 30px;
+  border: 2px solid #c9c9c9;
+  color: #c9c9c9;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.menu-boton-paso-gral {
+  border-radius: 10px;
+  color: #ffffff;
+  border: none;
+}
+
+.boton-paso {
+  background-color: var(--magenta);  
+}
+
+.boton-gral {
+  background-color: var(--celeste);
+}
+
+
+
+
 /*---------------------*/
 
 
@@ -132,13 +161,3 @@ h3 {
 }
 /* ----------------------------- */
 
-.menu-boton {
-  display: inline-block;
-  text-decoration: none;
-  padding: 7px 25px;
-  border-radius: 30px;
-  border: 2px solid #c9c9c9;
-  color: #c9c9c9;
-  font-size: 14px;
-  margin: 5px;
-}
