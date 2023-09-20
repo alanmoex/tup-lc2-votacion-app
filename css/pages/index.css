@@ -20,8 +20,8 @@ img {
   height: 100px;
   width: 400px;
   padding: 1rem;
-  display: flex; /* Activar el modelo de caja flexible */
-  align-items: center; /* Centrar verticalmente el contenido */
+  display: flex; 
+  align-items: center; 
   justify-content: left;
   color: #FFF;
   font-size: 28px;
