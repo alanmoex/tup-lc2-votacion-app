@@ -15,10 +15,14 @@
 .agregar-informe {
     background-color: var(--gris-claro);
     color: white;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: bold;
     text-align: center;
-    padding: 5px;
+    padding: 0.5rem 1rem;
+    margin: 15px;
     border-radius: 5px;
+    height: 40px;
+    width: 224px;
     text-transform: uppercase;
     cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
     transition: color 0.2s; 
