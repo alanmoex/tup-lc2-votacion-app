@@ -1,3 +1,49 @@
+.texto-path {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--celeste);
+}
+/* --------------------------- */
+/* Estilos para los botones del menu */
+/* --------------------------- */
+ul, ol {
+    list-style-type: none;
+}
+/* Filtrar */
+.filtrar {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--textos);
+}
+
+/* Inicio */
+.inicio {
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+}
+
+/* Estilo de desplegables */
+.desplegables {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+}
+
+
 /* --------------------------- */
 /* Estilos para los recuadros de agregar informe, mesas escrutadas, etc */
 /* --------------------------- */
