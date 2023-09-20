@@ -39,6 +39,7 @@
         </section>
         <section id="sec-contenido">
             <!--Seccion para contenido de la página-->
+            <!--Recuadros (agregar informe, mesas escrutadas, etc)-->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 agregar-informe">
@@ -214,11 +215,13 @@
                                                         c5.146-12.51,12.633-23.922,22.061-33.622c2.67-2.135,5.467-4.104,8.376-5.898c0.834-0.489,1.431-1.3,1.652-2.241
                                                         C657.869,283.641,657.694,282.938,657.24,282.422z">
                             </path>
-                            <path fill="#FFFFFF" d="M519.332,386.472h97.68c3.453,0,6.252,2.799,6.252,6.252v117.971l0,0H512.608l0,0V392.724
+                            <path fill="#FFFFFF"
+                                d="M519.332,386.472h97.68c3.453,0,6.252,2.799,6.252,6.252v117.971l0,0H512.608l0,0V392.724
                                                         c-0.01-3.453,2.781-6.26,6.234-6.27C519.006,386.454,519.169,386.46,519.332,386.472z">
                             </path>
                             <rect x="527.354" y="363.114" fill="#FFFFFF" width="82.698" height="17.224"></rect>
-                            <path fill="#FFFFFF" d="M304.508,320.173c-1.309-1.415-2.869-2.575-4.602-3.421c-1.851-0.524-3.812-0.524-5.662,0l-3.186,0.943
+                            <path fill="#FFFFFF"
+                                d="M304.508,320.173c-1.309-1.415-2.869-2.575-4.602-3.421c-1.851-0.524-3.812-0.524-5.662,0l-3.186,0.943
                                                         c-6.955,3.823-12.869,9.291-17.224,15.927c-2.748,4.048-6.654,7.173-11.207,8.966v-83.76c0.419-4.117-2.505-7.824-6.606-8.376
                                                         c-4.149,0.493-7.14,4.218-6.725,8.376v45.536c0.135,1.95-1.337,3.641-3.287,3.774c-0.005,0.001-0.011,0.001-0.016,0.001
                                                         c-1.909-0.187-3.322-1.861-3.186-3.775v-57.688c0.352-4.139-2.607-7.824-6.725-8.376c-4.116,0.552-7.075,4.237-6.724,8.376v57.688
@@ -235,6 +238,55 @@
                             <rect x="195.975" y="387.534" fill="#FFFFFF" width="69.013" height="14.393"></rect>
                         </svg>
                         <span>Participación sobre escrutado <br>62.71%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cuadros de agrupaciones, provincia, resumen-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 cuadros cuadro-agrupaciones">
+                        <h3 class="titulo-cuadros">Agrupaciones politicas</h3>
+                        <div class="progress" style="background: var(--grafica-amarillo-claro);">
+                            <div class="progress-bar" style="width:15%; background: var(--graficaamarillo);">
+                                <span class="progress-bar-text">15%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 cuadros cuadro-provincias">
+                        <h3 class="titulo-cuadros titulo-provincias">Provincia</h3>
+                        <svg>
+                            <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1"
+                                fill-rule="evenodd"
+                                d="M143 57L138 88L141 94L137 106L137 111L140 115L140 119L142 120L142 122L130 142L143 142L153 131L156 132L159 128L159 126L155 123L154 120L154 110L155 106L157 106L161 102L166 93L166 79L168 74L172 70L173 59L175 58L143 57z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="col-lg-4 cuadros">
+                        <h3 class="titulo-cuadros titulo-resumen">Resumen de votos</h3>
+                        <div class="chart-wrap horizontal">
+                            <div class="title">Título de la grafica</div>
+                            <div class="grid">
+                                <div class="bar" style="--bar-value:85%;" data-name="Partido 1" title="Your Blog
+                            85%"></div>
+                                <div class="bar" style="--bar-value:23%;" data-name="Partido 2" title="Medium
+                            23%"></div>
+                                <div class="bar" style="--bar-value:7%;" data-name="Partido 3" title="Tumblr
+                            7%"></div>
+                                <div class="bar" style="--bar-value:38%;" data-name="Partido 4" title="Facebook
+                            38%"></div>
+                                <div class="bar" style="--bar-value:35%;" data-name="Partido 5" title="YouTube
+                            35%"></div>
+                                <div class="bar" style="--bar-value:30%;" data-name="Partido 6" title="LinkedIn
+                            30%"></div>
+                                <div class="bar" style="--bar-value:5%;" data-name="Partido 7" title="Twitter
+                            5%"></div>
+                                <div class="bar" style="--bar-value:20%;" data-name="Otros" title="Other
+                            20%"></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
