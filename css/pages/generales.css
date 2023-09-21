@@ -3,6 +3,7 @@
     font-family: 'Roboto', sans-serif;
     color: var(--celeste);
 }
+
 /* --------------------------- */
 /* Estilos para los botones del menu */
 /* --------------------------- */
@@ -148,7 +149,7 @@
     font-size: 12px;
     font-weight: bold;
     border-bottom: 1px solid var(--borde-Grilla);
-    margin: 0; 
+    margin: 0;
 }
 
 /* --------------------------- */
@@ -156,10 +157,10 @@
 /* --------------------------- */
 
 .cuadro-provincias {
-    text-align: center; 
+    text-align: center;
 }
 
-.cuadro-provincias svg{
+.cuadro-provincias svg {
     transform: scale(3);
 }
 
@@ -202,7 +203,11 @@
     --bar-spacing: 10px;
     font-family: sans-serif;
     width: var(--chart-width);
+    transform: scale(1.4);
+    margin-left: 125px;
+    
 }
+
 
 .chart-wrap .title {
     font-weight: bold;
@@ -277,5 +282,6 @@
     display: inline-block;
     white-space: nowrap;
 }
+
 /* --------------------------- */
 /* --------------------------- */

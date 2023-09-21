@@ -202,6 +202,8 @@
     --bar-spacing: 10px;
     font-family: sans-serif;
     width: var(--chart-width);
+    transform: scale(1.4);
+    margin-left: 125px;
 }
 
 .chart-wrap .title {
