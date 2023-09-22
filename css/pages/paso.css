@@ -3,6 +3,7 @@
     font-family: 'Roboto', sans-serif;
     color: var(--celeste);
 }
+
 /* --------------------------- */
 /* Estilos para los botones del menu */
 /* --------------------------- */
@@ -129,11 +130,11 @@
 .recuadros {
     border-radius: 10px;
     margin: 15px;
-    height: 70px;
-    width: 184px;
+    height: 100px;
+    width: 250px;
     padding: 0.5rem 1rem;
     color: #FFF;
-    font-size: 12px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -187,6 +188,7 @@
 /* Se agrega barra de desplazamiento vertical */
 .cuadro-agrupaciones {
     overflow-y: auto;
+    height: 500px;
 }
 
 /* Estilos para el cuadro de cada Agrupacion política */
@@ -203,6 +205,8 @@
     text-transform: uppercase;
     font-weight: bold;
     margin: 0;
+    margin: 10px 15px 0px 0px;
+
 }
 
 /* Estilos para los títulos de cada Agrupación */
@@ -210,18 +214,30 @@
     font-size: 12px;
     font-weight: bold;
     border-bottom: 1px solid var(--borde-Grilla);
-    margin: 0; 
+    margin: 0;
+    padding: 5px;
 }
+
+.partido {
+    height: 150px;
+}
+
+.porcentajes {
+    float: right;
+    color: var(--texto-footer);
+}
+
 
 /* --------------------------- */
 /* Estilos para el cuadro de Provincias */
 /* --------------------------- */
 
 .cuadro-provincias {
-    text-align: center; 
+    text-align: center;
+    width: 30%;
 }
 
-.cuadro-provincias svg{
+.cuadro-provincias svg {
     transform: scale(3);
 }
 
@@ -235,6 +251,7 @@
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
+    margin-top: 25px;
 }
 
 .progress-bar {
@@ -266,7 +283,9 @@
     width: var(--chart-width);
     transform: scale(1.4);
     margin-left: 125px;
+    
 }
+
 
 .chart-wrap .title {
     font-weight: bold;
@@ -341,5 +360,6 @@
     display: inline-block;
     white-space: nowrap;
 }
+
 /* --------------------------- */
 /* --------------------------- */
