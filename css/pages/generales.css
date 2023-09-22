@@ -41,6 +41,68 @@
     font-weight: bold;
 }
 
+/* Estilo para el mensaje de éxito (verde) */
+.alert.alert-success {
+    background-color: var(--mensaje-usuario-verde);
+    color: #FFFFFF;
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert.alert-success::before {
+    content: "\f164"; /* Icono de pulgar arriba (fa-thumbs-up) */
+    font-family: FontAwesome;
+    margin-right: 10px;
+  }
+  
+  /* Estilo para el mensaje de error (rojo) */
+  .alert.alert-danger {
+    background-color: var(--mensaje-usuario-rojo);
+    color: #FFFFFF;
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert.alert-danger::before {
+    content: "\f071"; /* Icono de triángulo de exclamación (fa-exclamation-triangle) */
+    font-family: FontAwesome;
+    margin-right: 10px;
+  }
+  
+  /* Estilo para el mensaje genérico (amarillo) */
+  .alert {
+    background-color: var(--mensaje-usuario-amarillo);
+    color: #FFFFFF;
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert::before {
+    content: "\f06a"; /* Icono de signo de exclamación (fa-exclamation) */
+    font-family: FontAwesome;
+    margin-right: 10px;
+  }
 
 /* --------------------------- */
 /* Estilos para los recuadros de agregar informe, mesas escrutadas, etc */

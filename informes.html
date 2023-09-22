@@ -1,60 +1,57 @@
-    <!DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sistema de Publicación de Resultados Electorales</title>
-        <link rel="shortcut icon" type="image/png" href="img/icons/favicon-16x16.png">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <!-- Estilos CSS -->
-        <link rel="stylesheet" href="css/common.css" />
-        <link rel="stylesheet" href="css/pages/informes.css" />
-        <style>
-            /* Agrega estilos personalizados aquí según tus necesidades */
-            #sec-contenido {
-                max-height: 400px; /* Ajusta la altura máxima de la grilla con scroll */
-                overflow-y: auto; /* Agrega desplazamiento vertical (scroll) cuando sea necesario */
-            }
-        </style>
-    </head>
-
-    <body>
-        <header>
-            <!-- Barra de cabecera del portal con logo y texto de la página -->
-            <div class="container-fluid barra-logo">
-                <a href="index.html">
-                    <img src="img/Logo_DINE_negativo.png" alt="logo" class="logo">
-                </a>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Publicación de Resultados Electorales</title>
+    <link rel="shortcut icon" type="image/png" href="img/icons/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pages/informes.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        #sec-contenido {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid barra-logo">
+            <a href="index.html">
+                <img src="img/Logo_DINE_negativo.png" alt="logo" class="logo">
+            </a>
+        </div>
+        <div class="container-fluid menu-principal">
+            <ul>
+                <li><span>CONSULTAR: </span></li>
+                <li><a class="menu-boton menu-boton-paso-gral boton-paso" href="paso.html">PASO</a></li>
+                <li><a class="menu-boton menu-boton-paso-gral boton-gral" href="generales.html">GENERALES</a></li>
+                <li><a class="menu-boton" href="index.html">INICIO</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Contenido principal de la página -->
+    <main>
+        <section id="sec-titulo">
+            <!-- Sección para agregar el título de la página/sección, texto y, si es necesario, una imagen -->
+            <h1>Reporte de Elecciones</h1>
+            <!-- Agrega aquí la imagen si es necesario -->
+        </section>
+        <section id="sec-messages">
+            <div class="alert alert-success">
+                <i class="fas fa-thumbs-up"></i> Se agregó con éxito el resultado al informe.
             </div>
-
-            <!-- Barra de menú principal -->
-            <div class="container-fluid menu-principal">
-                <ul>
-                    <li><span>CONSULTAR: </span></li>
-                    <li><a class="menu-boton menu-boton-paso-gral boton-paso" href="paso.html">PASO</a></li>
-                    <li><a class="menu-boton menu-boton-paso-gral boton-gral" href="generales.html">GENERALES</a></li>
-                    <li><a class="menu-boton" href="index.html">INICIO</a></li>
-                </ul>
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-triangle"></i> Error: se produjo un error al intentar agregar resultados al informe.
             </div>
-        </header>
-        <!-- Contenido principal de la página -->
-        <main>
-            <section id="sec-titulo">
-                <!-- Sección para agregar el título de la página/sección, texto y, si es necesario, una imagen -->
-                <h1>Reporte de Elecciones</h1>
-                <!-- Agrega aquí la imagen si es necesario -->
-            </section>
-            <section id="sec-messages">
-                <!-- Sección para mensajes al usuario (ejemplo: mensajes de error o éxito) -->
-                <div class="alert alert-success">
-                    Mensaje de éxito.
-                </div>
-                <div class="alert alert-danger">
-                    Mensaje de error.
-                </div>
-            </section>
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation"></i> La operación no se pudo completar
+            </div>
+        </section>
             <section id="sec-contenido">
                 <!-- Sección para contenido de la página -->
                 <!-- Grilla con valores de cada uno de los resultados -->
