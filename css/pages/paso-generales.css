@@ -5,6 +5,7 @@
 }
 
 
+
 /* --------------------------- */
 /* Estilos para los recuadros de agregar informe, mesas escrutadas, etc */
 /* --------------------------- */
@@ -66,9 +67,11 @@
 .cuadros {
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
+    margin: 10px;
+    margin-bottom: 50px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    width: 600px;
     height: 600px;
+    width: 550px;
 }
 
 /* Estilos para los títulos de los cuadros */
@@ -89,7 +92,7 @@
 /* Se agrega barra de desplazamiento vertical */
 .cuadro-agrupaciones {
     overflow-y: auto;
-    height: 500px;
+    height: 325px;
 }
 
 /* Estilos para el cuadro de cada Agrupacion política */
@@ -135,7 +138,6 @@
 
 .cuadro-provincias {
     text-align: center;
-    width: 30%;
 }
 
 .cuadro-provincias svg {
@@ -183,7 +185,7 @@
     font-family: sans-serif;
     width: var(--chart-width);
     transform: scale(1.4);
-    margin-left: 125px;
+    margin-left: 75px;
     
 }
 

@@ -218,7 +218,36 @@ main {
 
 /*---------------------*/
 
+/* Estilos para los recuadros de mesas escrutadas, etc */
+.recuadros {
+  border-radius: 10px;
+  margin: 15px;
+  height: 100px;
+  width: 250px;
+  padding: 0.5rem 1rem;
+  color: #FFF;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-weight: bold;
+}
 
+/* Se le da a cada recuadro su color de fondo */
+#mesas-escrutadas {
+  background-color: var(--celeste);
+}
+
+#electores {
+  background-color: var(--magenta);
+}
+
+#participacion {
+  background-color: var(--morado);
+}
+/*---------------------*/
+
+/*---------------------*/
 /* Estilos del pie de página */
 footer {
   background-color: var(--fondo-Footer);

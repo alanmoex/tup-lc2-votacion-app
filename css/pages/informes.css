@@ -1,68 +1,3 @@
-/* Estilo para el mensaje de éxito (verde) */
-.alert.alert-success {
-    background-color: var(--mensaje-usuario-verde);
-    color: #FFFFFF;
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 200;
-    display: flex;
-    align-items: center;
-  }
-  
-  .alert.alert-success::before {
-    content: "\f164"; /* Icono de pulgar arriba (fa-thumbs-up) */
-    font-family: FontAwesome;
-    margin-right: 10px;
-  }
-  
-  /* Estilo para el mensaje de error (rojo) */
-  .alert.alert-danger {
-    background-color: var(--mensaje-usuario-rojo);
-    color: #FFFFFF;
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 200;
-    display: flex;
-    align-items: center;
-  }
-  
-  .alert.alert-danger::before {
-    content: "\f071"; /* Icono de triángulo de exclamación (fa-exclamation-triangle) */
-    font-family: FontAwesome;
-    margin-right: 10px;
-  }
-  
-  /* Estilo para el mensaje genérico (amarillo) */
-  .alert {
-    background-color: var(--mensaje-usuario-amarillo);
-    color: #FFFFFF;
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 200;
-    display: flex;
-    align-items: center;
-  }
-  
-  .alert::before {
-    content: "\f06a"; /* Icono de signo de exclamación (fa-exclamation) */
-    font-family: FontAwesome;
-    margin-right: 10px;
-  }
-  
-
-
 
 /* Estilos generales de la grilla */
 .grilla {
@@ -81,6 +16,7 @@
   }
   
   .grilla thead th {
+    color: var(--titulo-Grilla);
     padding: 10px 20px;
     font-size: 14px;
     font-weight: bold;
@@ -104,7 +40,7 @@
   
   /* Estilos de la columna PROVINCIA */
   .grilla .columna-provincia {
-    /* Estilos específicos de la columna PROVINCIA aquí */
+    width: 250px;
   }
   
   /* Estilos de la columna ELECCIÓN */
@@ -121,7 +57,21 @@
   
   /* Estilos de los datos generales */
   .datos-generales {
-    /* Estilos específicos de los datos generales aquí */
+    border-radius: 5px;
+    margin: 2px;
+    height: 70px;
+    width: 120px;
+    padding: 0.5rem 1rem;
+    color: #FFF;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: bold;
+  }
+
+  .datos-generales svg {
+    transform: scale(1.5);
   }
   
   /* Estilos de las imágenes en los datos generales */
@@ -142,4 +92,3 @@
     font-size: 10px;
     color: var(--textos);
   }
-  
