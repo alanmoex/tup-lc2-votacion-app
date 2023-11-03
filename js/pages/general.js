@@ -1,32 +1,58 @@
 const tipoEleccion = 2;
 const tipoRecuento = 1;
 const periodosSelect = document.getElementById("año");
+const cargosSelect = document.getElementById("cargo");
+const distritosSelect = document.getElementById("distrito");
 
-document.addEventListener('DOMContentLoaded', consultarDatos);
+let datosElecciones = void
 
-async function consultarDatos() {
+document.addEventListener('DOMContentLoaded', consultarAños);
+periodosSelect.addEventListener('change', consultarDatos);
+cargosSelect.addEventListener('change', cargarDistritos);
+
+function cargarDistritos() {
+    while (distritosSelect.options.length > 1) {
+        distritosSelect.remove(1);
+    }
+    
+    datosElecciones.forEach((eleccion) => {
+        if (eleccion.IdEleccion == tipoEleccion) {
+            eleccion.Cargos.forEach((cargo) => {
+                if (cargo.IdCargo == cargosSelect.value)  {
+                    cargo.Distritos.forEach((distrito) => {
+                        console.log(distrito)
+                        const option = document.createElement('option');
+                        option.value = distrito.IdDistrito;
+                        option.text = distrito.Distrito;
+                        distritosSelect.appendChild(option);
+                    });
+                }
+            });
+        }
+    });
+}
+
+
+
+async function consultarAños() {
     const url = `https://resultados.mininterior.gob.ar/api/menu/periodos`
-    try{
+    try {
         const response = await fetch(url);
-        console.log(response);
 
-        if(response.ok){
+        if (response.ok) {
             const data = await response.json();
-            console.log(data);
             data.forEach((item) => {
                 const option = document.createElement('option');
                 option.value = item;
                 option.text = item;
                 periodosSelect.appendChild(option);
-              });
-        }else{
+            });
+        } else {
             //tarjeta.innerText = 'Hubo un error al consultar la API'
-            pass
         }
     }
-    catch (err){
+    catch (err) {
         //tarjeta.innerText = 'Hubo un error al consultar la API'
-        pass
     }
 }
 
