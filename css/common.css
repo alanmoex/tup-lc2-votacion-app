@@ -101,6 +101,7 @@ main {
 
 .menu-boton:hover {
   color: var(--gris-claro);
+  cursor: pointer;
 }
 
 .menu-boton-paso-gral {
@@ -161,6 +162,22 @@ main {
   padding: 5px;
   color: var(--celeste);
   font-weight: bold;
+}
+
+.desplegables:hover {
+  cursor: pointer;
+}
+
+.año {
+  width: 70px;
+}
+
+.cargo {
+  width: 120px;
+}
+
+.distrito {
+  width: 120px;
 }
 
 /* --------------------------- */
