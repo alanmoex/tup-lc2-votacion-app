@@ -23,8 +23,7 @@ let datosElecciones = void
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    mensajeAmarillo.textContent = "Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR"
-    mensajeAmarillo.style.visibility = 'visible';
+    mostrarMensaje(mensajeAmarillo, "Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR")
 });
 document.addEventListener('DOMContentLoaded', consultarAños);
 periodosSelect.addEventListener('change', consultarDatos);
