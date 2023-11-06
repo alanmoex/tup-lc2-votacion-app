@@ -41,13 +41,14 @@
                     <select class="desplegables distrito" id="distrito" name="distrito">
                         <option value="none">Distrito</option>
                     </select>
+                    <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
                 </li>
                 <li>
                     <select class="desplegables seccion" id="seccion" name="seccion">
                         <option value="none">Sección</option>
                     </select>
                 </li>
-                <li><a class="menu-boton filtrar">FILTRAR</a></li>
+                <li><a class="menu-boton filtrar" id="filtrar">FILTRAR</a></li>
                 <li><a class="menu-boton menu-boton-paso-gral boton-paso" href="paso.html">PASO</a></li>
                 <li><a class="menu-boton" href="informes.html">INFORMES</a></li>
                 <li><a class="inicio" href="index.html">INICIO</a></li>
@@ -58,23 +59,21 @@
     <main>
         <section id="sec-titulo">
             <!--Seccion para agregar una palicula favorita por codigo-->
-            <h1>Elecciones 2021 | Generales</h1>
-            <p class="texto-path">2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires</p>
-        </section>
+            <h1 id="titulo"></h1>
+            <p class="texto-path" id="subtitulo"></p>
         </section>
         <section id="sec-messages">
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="mensaje-verde">
                 Se agregó con éxito el resultado al informe.
             </div>
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" id="mensaje-rojo">
                 Error: se produjo un error al intentar agregar resultados al
                 informe.
             </div>
-            <div class="alert alert-warning">
-                La operación no se pudo completar
+            <div class="alert alert-warning" id="mensaje-amarillo">
             </div>
         </section>
-        <section id="sec-contenido">
+        <section id="sec-contenido" class="contenido">
             <!--Seccion para contenido de la página-->
             <!--Recuadros (agregar informe, mesas escrutadas, etc)-->
             <div class="container-fluid">
