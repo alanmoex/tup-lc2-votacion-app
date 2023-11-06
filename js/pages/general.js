@@ -8,15 +8,22 @@ const inputSeccionProvincial = document.getElementById("hdSeccionProvincial")
 const botonFiltrar = document.getElementById('filtrar')
 const titulo = document.getElementById('titulo')
 const subtitulo = document.getElementById('subtitulo')
+const contenido = document.getElementById('sec-contenido')
 const mensajeAmarillo = document.getElementById('mensaje-amarillo')
 const mensajeVerde = document.getElementById('mensaje-verde')
 const mensajeRojo = document.getElementById('mensaje-rojo')
+const mensajeCargando = document.getElementById('mensaje-cargando')
+const cuadroMesas = document.getElementById('cuadro-mesas')
+const cuadroElectores = document.getElementById('cuadro-electores')
+const cuadroParticipacion = document.getElementById('cuadro-participacion')
+const svgContainer = document.getElementById('svg-container')
 
 let añoSeleccionado = ""
 let cargoSeleccionado = ""
 let distritoSeleccionado = ""
 let seccionSeleccionada = ""
 
+let datosElecciones = "";
 
 let datosElecciones = void
 
