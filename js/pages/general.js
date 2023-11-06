@@ -97,7 +97,7 @@ function cargarSeccion() {
     datosElecciones.forEach((eleccion) => {
         if (eleccion.IdEleccion == tipoEleccion) {
             eleccion.Cargos.forEach((cargo) => {
-                if (cargo.IdCargo == cargosSelect.value)  {
+                if (cargo.IdCargo == cargosSelect.value) {
                     cargo.Distritos.forEach((distrito) => {
                         if (distrito.IdDistrito == distritosSelect.value) {
                             distrito.SeccionesProvinciales.forEach((seccionProvincial) => {
@@ -108,7 +108,7 @@ function cargarSeccion() {
                                     option.textContent = seccion.Seccion;
                                     seccionSelect.appendChild(option);
                                 })
-                            })                            
+                            })
                         }
                     });
                 }
@@ -120,11 +120,11 @@ function cargarSeccion() {
 function cargarDistritos() {
     cargoSeleccionado = cargosSelect.options[cargosSelect.selectedIndex].textContent;
     limpiarSelect(distritosSelect)
-    
+
     datosElecciones.forEach((eleccion) => {
         if (eleccion.IdEleccion == tipoEleccion) {
             eleccion.Cargos.forEach((cargo) => {
-                if (cargo.IdCargo == cargosSelect.value)  {
+                if (cargo.IdCargo == cargosSelect.value) {
                     cargo.Distritos.forEach((distrito) => {
                         const option = document.createElement('option');
                         option.value = distrito.IdDistrito;
@@ -153,11 +153,11 @@ async function consultarAños() {
                 periodosSelect.appendChild(option);
             });
         } else {
-            //tarjeta.innerText = 'Hubo un error al consultar la API'
+            mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
         }
     }
     catch (err) {
-        //tarjeta.innerText = 'Hubo un error al consultar la API'
+        mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
     }
 }
 
@@ -165,11 +165,12 @@ async function consultarDatos() {
     añoSeleccionado = periodosSelect.options[periodosSelect.selectedIndex].textContent;
     const url = "https://resultados.mininterior.gob.ar/api/menu?año="
     try {
+
         const response = await fetch(url + periodosSelect.value);
 
         if (response.ok) {
             limpiarSelect(cargosSelect)
-            
+
             datosElecciones = await response.json();
             datosElecciones.forEach((eleccion) => {
                 if (eleccion.IdEleccion == tipoEleccion) {
@@ -183,11 +184,14 @@ async function consultarDatos() {
 
             });
         } else {
-            //tarjeta.innerText = 'Hubo un error al consultar la API'
+            mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
         }
     }
     catch (err) {
-        //tarjeta.innerText = 'Hubo un error al consultar la API'
+        mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
+    }
+}
+
 function agregarInforme() {
     const nuevoInforme = {
         vAnio: periodosSelect.value,
