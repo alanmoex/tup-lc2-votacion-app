@@ -35,6 +35,13 @@ seccionSelect.addEventListener('change', () => {
 botonFiltrar.addEventListener('click', consultarResultados);
 botonFiltrar.addEventListener('click', mostrarTitulos);
 
+function ocultarMensajes() {
+    mensajeCargando.style.visibility = 'hidden'
+    mensajeRojo.style.visibility = 'hidden';
+    mensajeAmarillo.style.visibility = 'hidden';
+    mensajeVerde.style.visibility = 'hidden';
+}
+
 function mostrarTitulos() {
     titulo.textContent = `Elecciones ${periodosSelect.value} | Generales`
     subtitulo.textContent = `${añoSeleccionado}>Generales>${cargoSeleccionado}>${distritoSeleccionado}>${seccionSeleccionada}`
