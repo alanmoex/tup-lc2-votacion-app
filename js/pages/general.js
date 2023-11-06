@@ -188,5 +188,28 @@ async function consultarDatos() {
     }
     catch (err) {
         //tarjeta.innerText = 'Hubo un error al consultar la API'
+function agregarInforme() {
+    const nuevoInforme = {
+        vAnio: periodosSelect.value,
+        vTipoRecuento: tipoRecuento,
+        vTipoEleccion: tipoEleccion,
+        vCategoriaId: 2,
+        vDistrito: distritosSelect.value,
+        vSeccionProvincial: 0,
+        seccionId: seccionSelect.value,
+        circuitoId: "",
+        mesaId: "",
+
     }
+
+    let informes = JSON.parse(localStorage.getItem('INFORMES')) || [];
+
+    if (informes.includes(nuevoInforme)) {
+        mostrarMensaje(tipoMensaje, "El informe ya se encuentra añadido.")
+    } else {
+        informes.push(nuevoInforme);
+        localStorage.setItem('INFORMES', JSON.stringify(informes));
+        mostrarMensaje(mensajeVerde, "Informe agregado con exito")
+    }
+}
 }
