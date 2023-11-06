@@ -192,6 +192,16 @@ main {
   align-items: center;
   visibility: hidden;
 }
+/* Estilo para el mensaje de cargando (azul) */
+.alert.alert-cargando {
+  background-color: lightblue;
+}
+
+.alert.alert-cargando::before {
+  content: "\f110"; /* Icono de pulgar arriba (fa-thumbs-up) */
+  font-family: FontAwesome;
+  margin-right: 10px;
+}
 
 /* Estilo para el mensaje de éxito (verde) */
 .alert.alert-success {
