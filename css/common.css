@@ -159,6 +159,7 @@ main {
   border: none;
   font-size: 14px;
   height: 30px;
+  width: 120px;
   padding: 5px;
   color: var(--celeste);
   font-weight: bold;
@@ -172,13 +173,6 @@ main {
   width: 70px;
 }
 
-.cargo {
-  width: 120px;
-}
-
-.distrito {
-  width: 120px;
-}
 
 /* --------------------------- */
 /* Estilo los mensajes al usuario*/
@@ -196,6 +190,7 @@ main {
   font-weight: 200;
   display: flex;
   align-items: center;
+  visibility: hidden;
 }
 
 /* Estilo para el mensaje de éxito (verde) */
@@ -263,6 +258,10 @@ main {
   background-color: var(--morado);
 }
 /*---------------------*/
+
+.contenido {
+  visibility:hidden;
+}
 
 /*---------------------*/
 /* Estilos del pie de página */
