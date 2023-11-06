@@ -45,30 +45,43 @@ function mostrarTitulos() {
 
 
 
-async function consultarResultados() {
-    const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados`
-    let anioEleccion = periodosSelect.value;
-    let categoriaId = 2;
-    let distritoId = distritosSelect.value;
-    let seccionProvincialId = 0; //tiene que ir 0 porque no reconoce el null
-    let seccionId = seccionSelect.value;
-    let circuitoId = "";
-    let mesaId = "";
-    let parametros = `?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`
-    console.log(url + parametros)
-    try {
-        const response = await fetch(url + parametros);
 
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data)
-        } else {
-            //tarjeta.innerText = 'Hubo un error al consultar la API'
+async function consultarResultados() {
+    if (validarSelects()) {
+        ocultarMensajes();
+        const url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados`
+        let anioEleccion = periodosSelect.value;
+        let categoriaId = 2;
+        let distritoId = distritosSelect.value;
+        let seccionProvincialId = 0; //tiene que ir 0 porque no reconoce el null
+        let seccionId = seccionSelect.value;
+        let circuitoId = "";
+        let mesaId = "";
+        let parametros = `?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`
+        try {
+            mensajeCargando.style.visibility = 'visible';
+            const response = await fetch(url + parametros);
+            if (response.ok) {
+                mensajeCargando.style.visibility = 'hidden';
+                const data = await response.json();
+                console.log(data)
+                mostrarTitulos();
+                //cambiarImagenProvincia();
+                mostrarContenido();
+                cuadroMesas.textContent = `${data.estadoRecuento.mesasTotalizadas}`
+                cuadroElectores.textContent = `${data.estadoRecuento.cantidadElectores}`
+                cuadroParticipacion.textContent = `${data.estadoRecuento.participacionPorcentaje}%`
+            } else {
+                mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
+            }
         }
+        catch (err) {
+            mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
+        }
+    }else{
+        mostrarCampoFaltante();
     }
-    catch (err) {
-        //tarjeta.innerText = 'Hubo un error al consultar la API'
-    }
+
 }
 
 function limpiarSelect(select) {
