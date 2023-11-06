@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/paso-generales.css" />
     <script src="js/pages/general.js" defer></script>
+    <script src="js/mapas.js" defer></script>
 </head>
 
 <body>
@@ -57,12 +58,9 @@
     </header>
     <!-- Contenido principal de la página -->
     <main>
-        <section id="sec-titulo">
-            <!--Seccion para agregar una palicula favorita por codigo-->
-            <h1 id="titulo"></h1>
-            <p class="texto-path" id="subtitulo"></p>
-        </section>
+        
         <section id="sec-messages">
+            <div class="alert alert-cargando" id="mensaje-cargando">Cargando...</div>
             <div class="alert alert-success" id="mensaje-verde">
                 Se agregó con éxito el resultado al informe.
             </div>
@@ -72,6 +70,11 @@
             </div>
             <div class="alert alert-warning" id="mensaje-amarillo">
             </div>
+        </section>
+        <section id="sec-titulo">
+            <!--Seccion para agregar una palicula favorita por codigo-->
+            <h1 id="titulo"></h1>
+            <p class="texto-path" id="subtitulo"></p>
         </section>
         <section id="sec-contenido" class="contenido">
             <!--Seccion para contenido de la página-->
@@ -126,7 +129,9 @@
                                 </path>
                             </g>
                         </svg>
-                        <span>Mesas Escrutadas <br>62.71%</span>
+                        <span>Mesas Escrutadas<br><div id="cuadro-mesas"></div></span>
+                        
+                        
                     </div>
                     <div class="col-lg-2 recuadros" id="electores">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +217,7 @@
                                                         c-0.238-0.571-0.797-0.944-1.416-0.944l0,0c-4.601,1.534-7.55-4.364-8.966-9.319c-2.595-10.027-1.18-14.864,0.473-17.105H180.521z">
                             </path>
                         </svg>
-                        <span>Electores <br>62.71%</span>
+                        <span>Electores<div id="cuadro-electores"></div></span>
                     </div>
                     <div class="col-lg-2 recuadros" id="participacion">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -273,7 +278,7 @@
                             </path>
                             <rect x="195.975" y="387.534" fill="#FFFFFF" width="69.013" height="14.393"></rect>
                         </svg>
-                        <span>Participación sobre escrutado <br>62.71%</span>
+                        <span>Participación sobre escrutado<div id="cuadro-participacion"></div></span>
                     </div>
                 </div>
             </div>
@@ -330,7 +335,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 cuadros cuadro-provincias">
+                    <div class="col-lg-4 cuadros cuadro-provincias" id="svg-container">
                         <h3 class="titulo-cuadros titulo-provincias">Provincia</h3>
                         <svg>
                             <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
