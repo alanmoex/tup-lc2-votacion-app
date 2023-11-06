@@ -212,4 +212,11 @@ function agregarInforme() {
         mostrarMensaje(mensajeVerde, "Informe agregado con exito")
     }
 }
+
+function mostrarMensaje(tipoMensaje, mensaje,) {
+    tipoMensaje.textContent = mensaje
+    tipoMensaje.style.visibility = 'visible';
+    setTimeout(function () {
+        ocultarMensajes();
+    }, 5000);
 }
