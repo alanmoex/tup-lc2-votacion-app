@@ -42,6 +42,22 @@ function ocultarMensajes() {
     mensajeVerde.style.visibility = 'hidden';
 }
 
+function validarSelects() {
+    return (periodosSelect.value !== 'none' && cargosSelect.value !== 'none' && distritosSelect.value !== 'none' && seccionSelect.value !== 'none')
+}
+
+function mostrarCampoFaltante() {
+    if (periodosSelect.value == 'none'){
+        mostrarMensaje(mensajeAmarillo, 'Por favor complete los campos de año, cargo, distrito y seccion antes de filtrar')
+    }else if (cargosSelect.value =='none'){
+        mostrarMensaje(mensajeAmarillo, 'Por favor complete los campos de cargo, distrito y seccion antes de filtrar')
+    }else if (distritosSelect.value =='none'){
+        mostrarMensaje(mensajeAmarillo, 'Por favor complete los campos de distrito y seccion antes de filtrar')
+    }else{
+        mostrarMensaje(mensajeAmarillo, 'Por favor complete el campos de seccion antes de filtrar')
+    }
+}
+
 function mostrarTitulos() {
     titulo.textContent = `Elecciones ${periodosSelect.value} | Generales`
     subtitulo.textContent = `${añoSeleccionado}>Generales>${cargoSeleccionado}>${distritoSeleccionado}>${seccionSeleccionada}`
