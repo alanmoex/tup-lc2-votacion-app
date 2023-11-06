@@ -25,10 +25,51 @@ let seccionSeleccionada = ""
 
 let datosElecciones = "";
 
-let datosElecciones = void
-
-
-
+let agrupaciones = [
+    {
+        1: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-amarillo'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-amarillo-claro')
+        }
+    },
+    {
+        2: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-celeste'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-celeste-claro')
+        }
+    },
+    {
+        3: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-bordo'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-bordo-claro')
+        }
+    },
+    {
+        4: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-lila'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-lila-claro')
+        }
+    },
+    {
+        5: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-lila2'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-lila2-claro')
+        }
+    },
+    {
+        6: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-gris'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-gris-claro')
+        }
+    },
+    {
+        7: {
+            colorPleno: getComputedStyle(document.documentElement).getPropertyValue('--grafica-verde'),
+            colorLiviano: getComputedStyle(document.documentElement).getPropertyValue('--grafica-verde-claro')
+        }
+    },
+];
+ 
 document.addEventListener('DOMContentLoaded', () => {
     mostrarMensaje(mensajeAmarillo, "Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR")
 });
@@ -40,7 +81,6 @@ seccionSelect.addEventListener('change', () => {
     seccionSeleccionada = seccionSelect.options[seccionSelect.selectedIndex].textContent;
 });
 botonFiltrar.addEventListener('click', consultarResultados);
-botonFiltrar.addEventListener('click', mostrarTitulos);
 
 function ocultarMensajes() {
     mensajeCargando.style.visibility = 'hidden'
