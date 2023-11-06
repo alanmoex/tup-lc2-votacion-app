@@ -65,8 +65,21 @@ function mostrarTitulos() {
     subtitulo.style.visibility = 'visible';
 }
 
+function mostrarContenido() {
+    contenido.style.visibility = 'visible';
+}
 
+function cambiarImagenProvincia() {
+    const svg = provinciasSVG.find(
+        (item) => item.provincia === distritoSeleccionado
+    );
 
+    if (svg) {
+        svgContainer.innerHTML = svg.svg;
+    } else {
+        svgContainer.innerHTML = "<p>No se encontró el SVG para la provincia seleccionada</p>";
+    }
+}
 
 async function consultarResultados() {
     if (validarSelects()) {
