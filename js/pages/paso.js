@@ -406,14 +406,14 @@ function agregarInforme() {
     let vAnio = periodosSelect.value;
     let vTipoRecuento = tipoRecuento;
     let vTipoEleccion = tipoEleccion;
-    let vCategoriaId = 2;
+    let vCategoriaId = cargosSelect.value;
     let vDistrito = distritosSelect.value;
     let vSeccionProvincial = 0;
     let seccionId = seccionSelect.value;
     let circuitoId = "";
     let mesaId = "";
 
-    nuevoInforme = `${vAnio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${seccionId}|${circuitoId}|${mesaId}`
+    nuevoInforme = `${vAnio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${seccionId}|${circuitoId}|${mesaId}|${añoSeleccionado}|${cargoSeleccionado}|${distritoSeleccionado}|${seccionSeleccionada}`
 
     let informes = [];
 
@@ -421,8 +421,7 @@ function agregarInforme() {
         informes = JSON.parse(localStorage.getItem('INFORMES'));
     }
 
-    console.log(informes);
-    console.log(nuevoInforme);
+    
 
     if (informes.includes(nuevoInforme)) {
         mostrarMensaje(mensajeAmarillo, "El informe ya se encuentra añadido.");
