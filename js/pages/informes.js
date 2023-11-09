@@ -5,6 +5,7 @@ const mensajeCargando = document.getElementById('mensaje-cargando')
 const informesContainer = document.getElementById('informe-container')
 
 let informes = [];
+let resultados = "";
 
 let anioEleccion = '';
 let tipoRecuento = '';
@@ -29,10 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             url = armarUrl(datos);
             return consultarResultados(url);
         });
-        await Promise.all(promises);
-        informes.forEach(datos => {
-            crearInforme();
-        });
+        
     } else {
         mostrarMensaje(mensajeAmarillo, "Debe agregar un INFORME desde Paso o Generales primero!");
     }
@@ -86,7 +84,7 @@ async function consultarResultados(url) {
         if (response.ok) {
             console.log('respuesta ok')
             mensajeCargando.style.visibility = 'hidden';
-            const resultados = await response.json();
+            resultados = await response.json();
             console.log(resultados)
             console.log(resultados.valoresTotalizadosPositivos)
             crearInforme(resultados);
@@ -103,12 +101,12 @@ async function consultarResultados(url) {
 }
 
 function crearInforme(resultados) {
+    console.log('resultados dentro de crear informe: ', resultados)
     try {
         let agrupaciones = resultados.valoresTotalizadosPositivos;
         const tr = document.createElement('tr');
 
         const tdProvincia = document.createElement('td');
-        tdProvincia.classList.add('columna-eleccion');
         cambiarImagenProvincia(tdProvincia);
 
         const tdEleccion = document.createElement('td');
@@ -155,16 +153,12 @@ function crearInforme(resultados) {
         tr.appendChild(tdEleccion);
         tr.appendChild(tdCuadritos);
         tr.appendChild(tdDatos);
+
+        informesContainer.appendChild(tr);
     } catch (error) {
         console.log(resultados.valoresTotalizadosPositivos)
         console.log("No se creo el informe porque el resultado esta vacio")
     }
-
-
-
-
-
-
 }
 
 function ocultarMensajes() {

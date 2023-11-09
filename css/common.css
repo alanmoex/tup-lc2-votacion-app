@@ -319,3 +319,8 @@ h3 {
 }
 /* ----------------------------- */
 
+.texto-path {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--celeste);
+}
