@@ -3,33 +3,23 @@ const mensajeVerde = document.getElementById('mensaje-verde')
 const mensajeRojo = document.getElementById('mensaje-rojo')
 const mensajeCargando = document.getElementById('mensaje-cargando')
 const informesContainer = document.getElementById('informe-container')
+const cuadritos = document.getElementById("cuadritos")
+const mesasEscrutadas = document.getElementById("mesas-escrutadas")
+const electores = document.getElementById("electores")
+const participacion = document.getElementById("participacion")
 
 let informes = [];
 let resultados = "";
 
-let anioEleccion = '';
-let tipoRecuento = '';
-let tipoEleccion = '';
-let categoriaId = '';
-let distritoId = '';
-let seccionProvincialId = '';
-let seccionId = '';
-let circuitoId = "";
-let mesaId = "";
-
-let añoSeleccionado = ""
-let cargoSeleccionado = ""
-let distritoSeleccionado = ""
-let seccionSeleccionada = ""
-let eleccion = ""
 
 document.addEventListener('DOMContentLoaded', async () => {
     if (localStorage.getItem('INFORMES')) {
         informes = JSON.parse(localStorage.getItem('INFORMES'));
-        const promises = informes.map(datos => {
-            url = armarUrl(datos);
-            return consultarResultados(url);
+        const promises = informes.forEach(informe => {
+            url = armarUrl(informe);
+            return consultarResultados(url, informe);
         });
+
         
     } else {
         mostrarMensaje(mensajeAmarillo, "Debe agregar un INFORME desde Paso o Generales primero!");
@@ -44,50 +34,42 @@ function mostrarMensaje(tipoMensaje, mensaje,) {
     }, 5000);
 }
 
-function armarUrl(data) {
-    let datos = data.split('|');
+function armarUrl(informe) {
+    let datos = informe.split('|');
 
-    anioEleccion = datos[0];
-    tipoRecuento = datos[1];
-    tipoEleccion = datos[2];
-    categoriaId = datos[3];
-    distritoId = datos[4];
-    seccionProvincialId = datos[5];
-    seccionId = datos[6];
-    circuitoId = datos[7];
-    mesaId = datos[8];
-    añoSeleccionado = datos[9];
-    cargoSeleccionado = datos[10];
-    distritoSeleccionado = datos[11];
-    seccionSeleccionada = datos[12];
+    let anioEleccion = datos[0];
+    let tipoRecuento = datos[1];
+    let tipoEleccion = datos[2];
+    let categoriaId = datos[3];
+    let distritoId = datos[4];
+    let seccionProvincialId = datos[5];
+    let seccionId = datos[6];
+    let circuitoId = datos[7];
+    let mesaId = datos[8];
+    let añoSeleccionado = datos[9];
+    let cargoSeleccionado = datos[10];
+    let distritoSeleccionado = datos[11];
+    let seccionSeleccionada = datos[12];
 
-    if (tipoEleccion == 1) {
-        eleccion = "Paso"
-    } else {
-        eleccion = "Generales"
-    }
 
     let urlSinParametros = `https://resultados.mininterior.gob.ar/api/resultados/getResultados`;
     let parametros = `?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`
     let url = urlSinParametros + parametros;
-    console.log(url)
     return url;
 
 }
 
-async function consultarResultados(url) {
+async function consultarResultados(url, informe) {
     try {
-        console.log('entra en el try de consultar resultados')
+        
         mensajeCargando.style.visibility = 'visible';
         let response = await fetch(url);
-        console.log('hace el fetch')
+        
         if (response.ok) {
-            console.log('respuesta ok')
             mensajeCargando.style.visibility = 'hidden';
-            resultados = await response.json();
+            const resultados = await response.json();
             console.log(resultados)
-            console.log(resultados.valoresTotalizadosPositivos)
-            crearInforme(resultados);
+            crearInforme(resultados, informe);
 
 
         } else {
@@ -100,14 +82,29 @@ async function consultarResultados(url) {
 
 }
 
-function crearInforme(resultados) {
-    console.log('resultados dentro de crear informe: ', resultados)
+function crearInforme(resultados, informe) {
+    let datos = informe.split('|');
+
+    let anioEleccion = datos[0];
+    let tipoEleccion = datos[2];
+    let añoSeleccionado = datos[9];
+    let cargoSeleccionado = datos[10];
+    let distritoSeleccionado = datos[11];
+    let seccionSeleccionada = datos[12];
+    let eleccion = "";
+
+    if (tipoEleccion == 1) {
+        eleccion = "Paso"
+    } else {
+        eleccion = "Generales"
+    }
+
     try {
         let agrupaciones = resultados.valoresTotalizadosPositivos;
         const tr = document.createElement('tr');
 
         const tdProvincia = document.createElement('td');
-        cambiarImagenProvincia(tdProvincia);
+        cambiarImagenProvincia(tdProvincia, informe);
 
         const tdEleccion = document.createElement('td');
 
@@ -123,6 +120,24 @@ function crearInforme(resultados) {
 
 
         const tdCuadritos = document.createElement('td');
+        let nuevoCuadritos = document.getElementById("cuadritos").cloneNode(true);
+
+        tdCuadritos.appendChild(nuevoCuadritos);
+
+        const spansDentroDeCuadritos = nuevoCuadritos.querySelectorAll('span');
+        console.log(spansDentroDeCuadritos)
+
+        const spanMesas = spansDentroDeCuadritos[0];
+        spanMesas.textContent = `Mesas Escrutadas ${resultados.estadoRecuento.mesasTotalizadas}`;
+
+        const spanElectores = spansDentroDeCuadritos[1];
+        spanElectores.textContent = `Electores ${resultados.estadoRecuento.cantidadElectores}`;
+
+        const spanParticipacion = spansDentroDeCuadritos[2];
+        spanParticipacion.innerHTML = `Participacion sobre escrutado <br> ${resultados.estadoRecuento.participacionPorcentaje}%`
+
+        nuevoCuadritos.style.visibility = "visible"
+        
 
         const tdDatos = document.createElement('td');
 
@@ -156,7 +171,6 @@ function crearInforme(resultados) {
 
         informesContainer.appendChild(tr);
     } catch (error) {
-        console.log(resultados.valoresTotalizadosPositivos)
         console.log("No se creo el informe porque el resultado esta vacio")
     }
 }
@@ -169,10 +183,13 @@ function ocultarMensajes() {
 }
 
 
-function cambiarImagenProvincia(svgContainer) {
+function cambiarImagenProvincia(svgContainer, informe) {
+    let datos = informe.split('|');
+    let distrito = datos[11];
+
     const provincia = provinciasSVG.find(
 
-        (item) => item.provincia.toUpperCase() === distritoSeleccionado.toUpperCase()
+        (item) => item.provincia.toUpperCase() === distrito.toUpperCase()
     );
 
     if (provincia) {
@@ -185,3 +202,4 @@ function cambiarImagenProvincia(svgContainer) {
         svgContainer.innerHTML = "<p>La imagen no se pudo cargar</p>";
     }
 }
+
