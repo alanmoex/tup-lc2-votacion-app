@@ -87,12 +87,16 @@ function crearListaAgrupacionesYColores() {
     })
 }
 
+function removerHijos(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
 function completarCuadroAgrupaciones() {
     let agrupaciones = resultados.valoresTotalizadosPositivos.sort((a, b) => b.votos - a.votos);
 
-    while (cuadroAgrupaciones.firstChild) {
-        cuadroAgrupaciones.removeChild(cuadroAgrupaciones.firstChild);
-    }
+    removerHijos(cuadroAgrupaciones);
 
     if (agrupaciones) {
         agrupaciones.forEach(agrupacion => {
@@ -170,18 +174,16 @@ function completarResumenVotos() {
     let agrupaciones = resultados.valoresTotalizadosPositivos;
     let cont = 0;
 
-    while (cuadroResumenVotos.firstChild) {
-        cuadroResumenVotos.removeChild(cuadroResumenVotos.firstChild);
-    }
+    removerHijos(cuadroResumenVotos);
 
     agrupaciones.forEach(agrupacion => {
         if (cont < 7) {
-            const divBarra = document.createElement('div');
-            divBarra.classList.add('bar');
-            divBarra.style.width = `${agrupacion.votosPorcentaje}%`;
-            divBarra.style.background = agrupacionesYColores[agrupacion.idAgrupacion].colorPleno;
-            divBarra.dataset.name = agrupacion.nombreAgrupacion;
-            divBarra.title = `${agrupacion.nombreAgrupacion} ${agrupacion.votosPorcentaje}%`;
+            const divBarra = document.createElement('div'); //creo la barra
+            divBarra.classList.add('bar'); //la agrego a la clase bar
+            divBarra.style.width = `${agrupacion.votosPorcentaje}%`; //le doy un ancho igual al porcentaje (la barra esta volteada 90° por eso al darle el ancho sube la barra)
+            divBarra.style.background = agrupacionesYColores[agrupacion.idAgrupacion].colorPleno; //le doy el color a la barra
+            divBarra.dataset.name = agrupacion.nombreAgrupacion; //le pongo el nombre de la agrupacion
+            divBarra.title = `${agrupacion.nombreAgrupacion} ${agrupacion.votosPorcentaje}%`; //agrego la descripcion cuando pasas el mouse
             cont++;
 
             cuadroResumenVotos.appendChild(divBarra);
@@ -224,9 +226,7 @@ function mostrarContenido() {
 }
 
 function cambiarImagenProvincia() {
-    while (svgContainer.firstChild) {
-        svgContainer.removeChild(svgContainer.firstChild);
-    }
+    removerHijos(svgContainer);
 
     const provincia = provinciasSVG.find(
 
@@ -326,6 +326,7 @@ function cargarSeccion() {
 function cargarDistritos() {
     cargoSeleccionado = cargosSelect.options[cargosSelect.selectedIndex].textContent;
     limpiarSelect(distritosSelect)
+    limpiarSelect(seccionSelect)
 
     datosElecciones.forEach((eleccion) => {
         if (eleccion.IdEleccion == tipoEleccion) {
@@ -367,7 +368,7 @@ async function consultarAños() {
         mostrarMensaje(mensajeRojo, "Error. El servicio esta caido por el momento. Intente mas tarde.")
         setInterval(function () {
             mensajeRojo.style.visibility = 'visible'
-        }, 5000);
+        }, 5000); 
     }
 }
 
@@ -380,6 +381,8 @@ async function consultarDatos() {
 
         if (response.ok) {
             limpiarSelect(cargosSelect)
+            limpiarSelect(distritosSelect)
+            limpiarSelect(seccionSelect)
 
             datosElecciones = await response.json();
             datosElecciones.forEach((eleccion) => {
