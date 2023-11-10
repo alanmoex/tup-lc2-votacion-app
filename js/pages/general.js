@@ -89,11 +89,8 @@ function crearListaAgrupacionesYColores() {
 
 function completarCuadroAgrupaciones() {
     let agrupaciones = resultados.valoresTotalizadosPositivos.sort((a, b) => b.votos - a.votos);
-
-    while (cuadroAgrupaciones.firstChild) {
-        cuadroAgrupaciones.removeChild(cuadroAgrupaciones.firstChild);
-    }
-
+    removerHijos(cuadroAgrupaciones);
+    
     if (agrupaciones) {
         agrupaciones.forEach(agrupacion => {
 
@@ -164,10 +161,8 @@ function completarResumenVotos() {
     let agrupaciones = resultados.valoresTotalizadosPositivos;
     let cont = 0;
 
-    while (cuadroResumenVotos.firstChild) {
-        cuadroResumenVotos.removeChild(cuadroResumenVotos.firstChild);
-    }
-
+    removerHijos(cuadroResumenVotos);
+    
     agrupaciones.forEach(agrupacion => {
         if (cont < 7) {
             const divBarra = document.createElement('div');
@@ -188,6 +183,12 @@ function ocultarMensajes() {
     mensajeRojo.style.visibility = 'hidden';
     mensajeAmarillo.style.visibility = 'hidden';
     mensajeVerde.style.visibility = 'hidden';
+}
+
+function removerHijos(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
 }
 
 function validarSelects() {
@@ -218,9 +219,7 @@ function mostrarContenido() {
 }
 
 function cambiarImagenProvincia() {
-    while (svgContainer.firstChild) {
-        svgContainer.removeChild(svgContainer.firstChild);
-    }
+    removerHijos(svgContainer);
 
     const provincia = provinciasSVG.find(
 
@@ -320,6 +319,7 @@ function cargarSeccion() {
 function cargarDistritos() {
     cargoSeleccionado = cargosSelect.options[cargosSelect.selectedIndex].textContent;
     limpiarSelect(distritosSelect)
+    limpiarSelect(seccionSelect)
 
     datosElecciones.forEach((eleccion) => {
         if (eleccion.IdEleccion == tipoEleccion) {
@@ -374,6 +374,8 @@ async function consultarDatos() {
 
         if (response.ok) {
             limpiarSelect(cargosSelect)
+            limpiarSelect(distritosSelect)
+            limpiarSelect(seccionSelect)
 
             datosElecciones = await response.json();
             datosElecciones.forEach((eleccion) => {
